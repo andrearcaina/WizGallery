@@ -14,7 +14,8 @@
 )](https://pypi.org/project/beautifulsoup4/) [![TAILWINDCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white
 )](https://tailwindcss.com/)  [![NODE.JS](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white
 )](https://nodejs.org/en) [![GIT](https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white
-)](https://git-scm.com/) 
+)](https://git-scm.com/) [![GIT](https://img.shields.io/badge/DOCKER-0db7ed?style=for-the-badge&logo=docker&logoColor=white
+)](https://www.docker.com/) 
 
 ## Languages
 
