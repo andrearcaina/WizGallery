@@ -14,7 +14,7 @@
 )](https://nextjs.org/) [![TAILWINDCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white
 )](https://tailwindcss.com/) [![NODE.JS](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white
 )](https://nodejs.org/en) \
-The frontend is developed using `JavaScript` and the Next.js framework, with Tailwind CSS as the chosen CSS framework.
+The frontend is developed using `JavaScript` and the Next.js framework, with Tailwind CSS as the chosen `CSS` framework.
 
 [![FLASK](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white
 )](https://flask.palletsprojects.com/en/3.0.x/) [![MYSQL](https://img.shields.io/badge/MYSQL-14354C?style=for-the-badge&logo=mysql&logoColor=white
