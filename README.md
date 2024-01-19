@@ -2,7 +2,8 @@
   <img src="frontend/public/logo.jpg" alt="logo" width="100%">
 </h1>
 
-<h4 align="center">WizGallery is a Flask application powered by Next.js, designed to showcase my collection of Wizard101 game photos sourced from a local MySQL database. Utilized Docker to simplify testing, processing, and deploying the application locally.</h4>
+<h2 align="center">WizGallery is...</h2>
+<p align="center">a Flask application powered by Next.js, designed to showcase my collection of Wizard101 game photos sourced from a local MySQL database. Utilized Docker to simplify testing, processing, and deploying the application locally.</h4>
 
 <hr>
 
