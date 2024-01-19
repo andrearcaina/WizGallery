@@ -9,58 +9,34 @@
 
 <hr>
 
-## Tech Stack
-[![NEXT.JS](https://img.shields.io/badge/NEXT-0769AD?style=for-the-badge&logo=next.js&logoColor=white
-)](https://nextjs.org/) [![TAILWINDCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white
-)](https://tailwindcss.com/) [![NODE.JS](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white
-)](https://nodejs.org/en) \
+## Tech Stack + Languages
+
+[![JAVASCRIPT](https://img.shields.io/badge/javascript-101010?style=for-the-badge&logo=javascript&logoColor=ffdd54)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![NEXT.JS](https://img.shields.io/badge/NEXT-0769AD?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/) 
+[![TAILWINDCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/) \
 The frontend is developed using `JavaScript` and the Next.js framework, with Tailwind CSS as the chosen `CSS` framework.
 
-[![FLASK](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white
-)](https://flask.palletsprojects.com/en/3.0.x/) [![MYSQL](https://img.shields.io/badge/MYSQL-14354C?style=for-the-badge&logo=mysql&logoColor=white
-)](https://pypi.org/project/beautifulsoup4/) \
-The backend framework I've chosen is Flask, a `Python`-based framework, where I create API endpoints for the client to retrieve.
-This is to query the database, and resembles a RESTful API, as it consists primarily of HTTP methods such as GET.
-The database is the MySQL community edition database (downloaded from the MySQL website), using a SQL structure.
+[![PYTHON](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)](https://www.python.org/)
+[![FLASK](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)](https://flask.palletsprojects.com/en/3.0.x/) 
+[![MYSQL](https://img.shields.io/badge/MYSQL-14354C?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/) \
+The backend framework chosen for this project is Flask, a `Python`-based framework. In Flask, I create API endpoints to communicate with the frontend (the client). 
+These endpoints are designed for retrieving data from a MySQL database structure, which was made using the MySQL Community Edition Server (from their website).
+This entire process resembles a RESTful API, employing HTTP methods such as GET for querying the database, and then returning JSON objects to the client.
 
 Here is a breakdown:
 - The API is structured around resources, with each endpoint representing a specific resource or set of data
+  - An example of an 'endpoint' from the server is `http://localhost:5000/api/data`, which returns data in JSON format to the client
+  - For the Flask API to receive information from the client, the client would send a query parameter on top of the endpoint like: `http://localhost:5000/api/search?location='{location}'`.
 - Flask provides an easy way to map HTTP methods with specific functions and decorators
-  - An example is: `@app.route('api/data', methods=['GET'])`. For more information check out [api/server.py](https://github.com/andrearcaina/WizGallery/blob/main/backend/api/server.py)
+  - An example is: `@app.route('api/data', methods=['GET'])`. This is a decorator to signify that at the endpoint `api/data`, there is data to retrieve from the database using the `GET` method  
+  - The returned output to the client of the data is a JSON object. Flask simplifies this by: `return jsonify(some_data)`
+  - For more information check out [api/server.py](https://github.com/andrearcaina/WizGallery/blob/main/backend/api/server.py)
 
-[![GIT](https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white
-)](https://git-scm.com/) [![DOCKER](https://img.shields.io/badge/DOCKER-0db7ed?style=for-the-badge&logo=docker&logoColor=white
-)](https://www.docker.com/) \
+[![GIT](https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white)](https://git-scm.com/) 
+[![DOCKER](https://img.shields.io/badge/DOCKER-0db7ed?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/) \
 Git serves as the primary version control system for the project, enabling efficient tracking of code changes. 
 Docker, on the other hand, allows ease of access to local testing, processing, and deployment with containerization. 
 This ensures a seamless and reproducible environment.
-
-## Languages
-
-<a href="https://www.python.org/" target="_blank" rel="noreferrer"> 
-  <img
-    src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg"
-    alt="javascript"
-    width="40"
-    height="40"
-  />
-</a>
-<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> 
-  <img
-    src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg"
-    alt="javascript"
-    width="40"
-    height="40"
-  />
-</a>
-<a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer">
-  <img
-    src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg"
-    alt="css3"
-    width="40"
-    height="40"
-  />
-</a>
 
 <hr>
 
