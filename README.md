@@ -25,7 +25,7 @@ The database is the MySQL community edition database (downloaded from the MySQL 
 
 Here is a breakdown:
 - The API is structured around resources, with each endpoint representing a specific resource or set of data
-- Flask provides a easy way to map HTTP methods with specific functions and decorators
+- Flask provides an easy way to map HTTP methods with specific functions and decorators
   - An example is: `@app.route('api/data', methods=['GET'])`. For more information check out [api/server.py](https://github.com/andrearcaina/WizGallery/blob/main/backend/api/server.py)
 
 [![GIT](https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white
