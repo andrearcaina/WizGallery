@@ -9,16 +9,31 @@
 
 <hr>
 
-## Built with
+## Tech Stack
+[![NEXT.JS](https://img.shields.io/badge/NEXT-0769AD?style=for-the-badge&logo=next.js&logoColor=white
+)](https://nextjs.org/) [![TAILWINDCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white
+)](https://tailwindcss.com/) [![NODE.JS](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white
+)](https://nodejs.org/en) \
+The frontend is developed using `JavaScript` and the Next.js framework, with Tailwind CSS as the chosen CSS framework.
 
 [![FLASK](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white
-)](https://flask.palletsprojects.com/en/3.0.x/)[![NEXT.JS](https://img.shields.io/badge/NEXT-0769AD?style=for-the-badge&logo=next.js&logoColor=white
-)](https://nextjs.org/) [![MYSQL](https://img.shields.io/badge/MYSQL-14354C?style=for-the-badge&logo=mysql&logoColor=white
-)](https://pypi.org/project/beautifulsoup4/) [![TAILWINDCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white
-)](https://tailwindcss.com/)  [![NODE.JS](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white
-)](https://nodejs.org/en) [![GIT](https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white
-)](https://git-scm.com/) [![GIT](https://img.shields.io/badge/DOCKER-0db7ed?style=for-the-badge&logo=docker&logoColor=white
-)](https://www.docker.com/) 
+)](https://flask.palletsprojects.com/en/3.0.x/) [![MYSQL](https://img.shields.io/badge/MYSQL-14354C?style=for-the-badge&logo=mysql&logoColor=white
+)](https://pypi.org/project/beautifulsoup4/) \
+The backend framework I've chosen is Flask, a `Python`-based framework, where I create API endpoints for the client to retrieve.
+This is to query the database, and resembles a RESTful API, as it consists primarily of HTTP methods such as GET.
+The database is the MySQL community edition database (downloaded from the MySQL website), using a SQL structure.
+
+Here is a breakdown:
+- The API is structured around resources, with each endpoint representing a specific resource or set of data
+- Flask provides a easy way to map HTTP methods with specific functions and decorators
+  - An example is: `@app.route('api/data', methods=['GET'])`  
+
+[![GIT](https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white
+)](https://git-scm.com/) [![DOCKER](https://img.shields.io/badge/DOCKER-0db7ed?style=for-the-badge&logo=docker&logoColor=white
+)](https://www.docker.com/) \
+Git serves as the primary version control system for the project, enabling efficient tracking of code changes. 
+Docker, on the other hand, allows ease of access to local testing, processing, and deployment with containerization. 
+This ensures a seamless and reproducible environment.
 
 ## Languages
 
