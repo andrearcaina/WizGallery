@@ -5,6 +5,8 @@
 <h2 align="center">WizGallery is...</h2>
 <p align="center">a Flask application powered by Next.js, designed to showcase my collection of Wizard101 game photos sourced from a local MySQL database. Utilized Docker to simplify testing, processing, and deploying the application locally.</h4>
 
+<pre align="center"> For any fellow Wizard101 Fans or OG's, try guessing the location of the logo above :P </pre>
+
 <hr>
 
 ## Built with
