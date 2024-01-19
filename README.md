@@ -57,6 +57,7 @@ To clone and run this application, you'll need:
 * [Git](https://git-scm.com)
 * [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com))
 * [Python](https://www.python.org/downloads/)
-* [Virtual Environment and Flask](https://flask.palletsprojects.com/en/3.0.x/installation/)
+* [Virtual Environment](https://flask.palletsprojects.com/en/3.0.x/installation/)
+* [Docker](https://www.docker.com/)
 
 **Coming soon!**
