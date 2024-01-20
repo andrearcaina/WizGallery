@@ -62,6 +62,7 @@ def create_table():
             """
         cursor.execute(query)
         return False
+    
     else:
         return True
 
@@ -121,6 +122,7 @@ def main():
         cursor.close()
         connection.close()
         print("Done.")
+    
     else:
         print("Table already exists.")
 

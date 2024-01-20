@@ -1,7 +1,8 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, send_file
 from flask_cors import CORS
 import mysql.connector
 from dotenv import load_dotenv
+import base64
 import os
 import time
 
@@ -58,15 +59,28 @@ def index():
 def search():
     form = request.args.get('location')
 
-    print(form)
+    info_query = f"SELECT id, account, world, file_name, date FROM photos WHERE location = '{form}';"
+    cursor.execute(info_query)
 
-    query = f"SELECT id, account, world, file_name, date FROM photos WHERE location = '{form}';"
+    info = cursor.fetchall()
 
-    cursor.execute(query)
+    img_query = f"SELECT image_data FROM photos WHERE location = '{form}';"
+    cursor.execute(img_query)
 
-    output = cursor.fetchall()
+    imgs = cursor.fetchall()
 
-    return jsonify(output)
+    # testing if the images are being retrieved and if they're different
+    for i in imgs:
+        for j in i:
+            print(len(j))
+
+    if info: # return the images in jpg format
+        img_data = []
+        for i in imgs:
+            for j in i:
+                img_data.append(base64.b64encode(j).decode('utf-8'))
+    
+        return jsonify({'info': info, 'img_data': img_data})
 
 @app.route('/api/locations', methods=['GET'])
 def locations():

@@ -50,12 +50,28 @@ export default function App() {
         fetchData(location);
     };
 
+    console.log("API Data:", apiData);
+
     return (
         <>
             <div className="bg-gray-200 p-8">
                 <h1 className="text-2xl font-bold mb-4">Wiz Gallery</h1>
                 <Form onSubmit={handleFormSubmit} allWorlds={Worlds} />
-                <pre className="mt-4">API CALL: {JSON.stringify(apiData, null, 2)}</pre>
+                {apiData.info && apiData.img_data && apiData.info.map((item, index) => (
+                    <div key={index}>
+                        <p>Account: {item[1]}</p>
+                        <p>World: {item[2]}</p>
+                        <p>File Name: {item[3]}</p>
+                        <p>Date: {item[4]}</p>
+                        <img
+                            src={`data:image/jpeg;base64,${apiData.img_data[index]}`}
+                            alt={`Image ${index + 1}`}
+                        />
+                    </div>
+                ))}
+                <p>Testing API: {!apiData.info && JSON.stringify(apiData, null, 2)}</p>
+                {!apiData.info && <p>No data available: submit a form</p>}
+                {!apiData.img_data && <p>No image data available: submit a form</p>}
             </div>
         </>
     );
