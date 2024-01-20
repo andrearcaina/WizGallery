@@ -2,28 +2,39 @@ import os
 import mysql.connector
 from dotenv import load_dotenv
 from datetime import datetime
-from time import sleep
+import time
 
 load_dotenv()
 
 db_configs = {
-    'host': str(os.environ.get('DB_HOST')),
+    'host': 'database',
     'user': str(os.environ.get('DB_USER')),
     'password': str(os.environ.get('DB_PASS')),
     'database': str(os.environ.get('DB_NAME'))
 }
 
+def establish_connection():
+    while True:
+        try:
+            connection = mysql.connector.connect(
+                host=db_configs['host'],
+                user=db_configs['user'],
+                password=db_configs['password'],
+                database=db_configs['database'],
+                port=3306
+            )
+            return connection
+        
+        except mysql.connector.Error as err:
+            print(f"Error: {err}")
+            print("Retrying database connection in 5 seconds...")
+            time.sleep(5)
+
 print(f"Connecting to {db_configs['database']}:")
 print(f"Host: {db_configs['host']}")
 print(f"User: {db_configs['user']}")
 
-connection = mysql.connector.connect(
-    host=db_configs['host'],
-    user=db_configs['user'],
-    password=db_configs['password'],
-    database=db_configs['database'],
-    port=8080
-)
+connection = establish_connection()
 cursor = connection.cursor()
 
 def table_exists(table):
@@ -51,8 +62,6 @@ def create_table():
 def insert_photo(account, world, location, file_name, date, image_data):
     query = 'INSERT INTO photos (account, world, location, file_name, date, image_data) VALUES (%s, %s, %s, %s, %s, %s)'
     values = (account, world, location, file_name, date, image_data)
-
-    print(values[:5])
     
     cursor.execute(query, values)
 
@@ -61,7 +70,7 @@ def read_image(file_path):
         return file.read()
 
 def traverse():
-    base_dir = r'C:\Users\dtand\Downloads\Wizard101\Photos'
+    base_dir = '/app/data/photos'
 
     for account in os.listdir(base_dir):
         account_path = os.path.join(base_dir, account)
@@ -71,8 +80,6 @@ def traverse():
 
                 for location in os.listdir(world_path):
                     location_path = os.path.join(world_path, location)
-
-                    print(location_path)
 
                     if os.path.isdir(location_path):
                         for file_name in os.listdir(location_path):
@@ -102,12 +109,12 @@ def main():
     if not exists:
         print("Creating table...")
         print("Retrieving data...")
-        sleep(1)
+        time.sleep(1)
         traverse()
         connection.commit()
         cursor.close()
         connection.close()
-    
+        print("Done.")
     else:
         print("Table already exists.")
 
