@@ -6,11 +6,17 @@ import time
 
 load_dotenv()
 
+# to run this script locally, set host to 'str(os.environ.get('DB_HOST'))' and port to 8080
+
+host = 'database'
+port = 3306
+
 db_configs = {
-    'host': 'database',
+    'host': host,
     'user': str(os.environ.get('DB_USER')),
     'password': str(os.environ.get('DB_PASS')),
-    'database': str(os.environ.get('DB_NAME'))
+    'database': str(os.environ.get('DB_NAME')),
+    'port': int(port)
 }
 
 def establish_connection():
@@ -21,7 +27,7 @@ def establish_connection():
                 user=db_configs['user'],
                 password=db_configs['password'],
                 database=db_configs['database'],
-                port=3306
+                port=db_configs['port']
             )
             return connection
         
