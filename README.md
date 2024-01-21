@@ -51,12 +51,12 @@ This ensures a seamless and reproducible environment.
 ## Future Updates/Ideas
 Some updates/ideas to implement into WizGallery:
 
-1. Host it somewhere!
-2. User photo submission: Allow users to insert their own photos into the website
+1. `Hosting`: Host it somewhere (maybe vercel) 
+2. `User photo submission`: Allow users to insert their own photos into the website
    * To implement this, can create a login and authentication page for security and personalization
    * The images processed need to be actual photos taken in Wizard101
-3. Photo showcase for users: Allows users to check out their own photos that they uploaded
-   * This is the main reason for the first point
+3. `Photo showcase for users`: Allows users to check out their own photos that they uploaded
+   * This is the main reason for the second point
 
 <hr>
 
