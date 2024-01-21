@@ -3,13 +3,13 @@
 </h1>
 
 <h2 align="center">WizGallery is...</h2>
-<p align="center">a Flask application powered by Next.js, designed to showcase my collection of Wizard101 game photos sourced from a local MySQL database. Utilized Docker to simplify testing, processing, and deploying the application locally.</h4>
+<p align="center"><strong>a Flask application powered by Next.js, designed to showcase my collection of Wizard101 game photos sourced from a local MySQL database. Utilized Docker to simplify testing, processing, and deploying the application locally.</strong></h4>
 
 <pre align="center"> For any fellow Wizard101 Fans or OG's, try guessing the location of the logo above :P </pre>
 
 <hr>
 
-## Tech Stack + Languages
+## Tech Stack + How it Works
 
 [![JAVASCRIPT](https://img.shields.io/badge/javascript-101010?style=for-the-badge&logo=javascript&logoColor=ffdd54)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![NEXT.JS](https://img.shields.io/badge/NEXT-0769AD?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/) 
@@ -41,16 +41,27 @@ This ensures a seamless and reproducible environment.
 <hr>
 
 ## Functionality
+> WizGallery is a full-stack web application designed to showcase a collection of Wizard101 game photos taken by me (andrearcaina).
+ The key functionalities include:
+- The app allows users to view a personal collection of Wizard101 game photos
+- The app allows users to view based on certain parameters (like photos from a certain world/location)
 
-**Coming Soon!**
+<hr> 
 
-## How To Use
+## Future Updates/Ideas
+Some updates/ideas to implement into WizGallery:
 
-To clone and run this application, you'll need: 
-* [Git](https://git-scm.com)
-* [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com))
-* [Python](https://www.python.org/downloads/)
-* [Virtual Environment](https://flask.palletsprojects.com/en/3.0.x/installation/)
-* [Docker](https://www.docker.com/)
+1. `Hosting`: Host it somewhere (maybe vercel) 
+2. `User photo submission`: Allow users to insert their own photos into the website
+   * To implement this, can create a login and authentication page for security and personalization
+   * The images processed need to be actual photos taken in Wizard101
+3. `Photo showcase for users`: Allows users to check out their own photos that they uploaded
+   * This is the main reason for the second point
 
-**Coming soon!**
+<hr>
+
+## Concepts learnt
+- `Docker`: How to use, what it does, and containerization 
+- `API's`: How to use, what it does, and different structures
+- `Fetch`: How to use, what it does, and what it can do
+- `MySQL`: How to use and what it does, alongside creating queries
