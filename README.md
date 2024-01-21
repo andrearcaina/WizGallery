@@ -41,7 +41,7 @@ This ensures a seamless and reproducible environment.
 <hr>
 
 ## Functionality
-> WizGallery is a full-stack web application designed to showcase a collection of Wizard101 game photos taken by me (andrearcaina). \
+> WizGallery is a full-stack web application designed to showcase a collection of Wizard101 game photos taken by me (andrearcaina).
  The key functionalities include:
 - The app allows users to view a personal collection of Wizard101 game photos
 - The app allows users to view based on certain parameters (like photos from a certain world/location)
