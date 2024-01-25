@@ -1,6 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react';
-import Form from './components/form';
+import { Form, Search } from './components';
 import './globals.css';
 
 export default function App() {
@@ -9,7 +9,7 @@ export default function App() {
 
     useEffect(() => {
         fetchData();
-        fetchWorlds(); // Fetch available worlds on component mount
+        fetchWorlds();
     }, []);
 
     const fetchData = async (location = null) => {
@@ -69,7 +69,7 @@ export default function App() {
                         />
                     </div>
                 ))}
-                <p>Testing API: {!apiData.info && JSON.stringify(apiData, null, 2)}</p>
+                {!apiData.info && <p>Testing API: {JSON.stringify(apiData, null, 2)}</p>}
                 {!apiData.info && <p>No data available: submit a form</p>}
                 {!apiData.img_data && <p>No image data available: submit a form</p>}
             </div>

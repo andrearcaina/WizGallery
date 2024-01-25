@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import '../globals.css';
 
-const Form = ({ onSubmit, allWorlds }) => {
+export default function Form({ onSubmit, allWorlds }) {
     const [world, setWorld] = useState('');
     const [allLocations, setLocations] = useState([]);
     const [selectedLocation, selectLocation] = useState('');
@@ -73,5 +73,3 @@ const Form = ({ onSubmit, allWorlds }) => {
         </>
     );
 };
-
-export default Form;
