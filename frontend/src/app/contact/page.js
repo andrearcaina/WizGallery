@@ -1,10 +1,10 @@
 'use client';
 import { useState, useEffect } from 'react';
 
-export default function Home() {
+export default function Contact() {
     return (
         <>
-            <div> hello world </div>
+            <div> who am i </div>
         </>
     );
 };

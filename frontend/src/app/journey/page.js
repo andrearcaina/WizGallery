@@ -1,10 +1,10 @@
+'use client';
 import { useState, useEffect } from 'react';
-import '../globals.css';
 
-export default function Search({ }) {
+export default function Journey() {
     return (
         <>
-            <div></div>
+            <div> journey </div>
         </>
     );
-}
+};

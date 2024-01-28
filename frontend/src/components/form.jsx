@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import '../globals.css';
 
 export default function Form({ onSubmit, allWorlds }) {
     const [world, setWorld] = useState('');
