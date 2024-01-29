@@ -4,7 +4,8 @@ import './globals.css';
 export const metadata = {
   title: 'WizGallery',
   description: 'a full-stack web app created by andre arcaina!',
-}
+  icons: [{ url: '/images/icon.ico', rel: 'icon' }]
+};
 
 export default function RootLayout({ children }) {
   return (
@@ -16,4 +17,4 @@ export default function RootLayout({ children }) {
       </body>
     </html>
   )
-}
+};

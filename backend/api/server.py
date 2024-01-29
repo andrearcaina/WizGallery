@@ -2,9 +2,8 @@ from flask import Flask, jsonify, request, send_file
 from flask_cors import CORS
 import mysql.connector
 from dotenv import load_dotenv
-import base64
-import os
-import time
+from io import BytesIO
+import base64, os, time
 
 load_dotenv()
 
@@ -50,6 +49,15 @@ def establish_connection():
 connection = establish_connection()
 cursor = connection.cursor()
 
+def encode(imgs):
+    img_data = []
+    
+    for i in imgs:
+        for j in i:
+            img_data.append(base64.b64encode(j).decode('utf-8'))
+
+    return img_data
+
 @app.route('/api/data', methods=['GET'])
 def index():
     example_data = {'data': 'Hello World!'}
@@ -74,13 +82,7 @@ def search():
         for j in i:
             print(len(j))
 
-    if info: # return the images in jpg format
-        img_data = []
-        for i in imgs:
-            for j in i:
-                img_data.append(base64.b64encode(j).decode('utf-8'))
-    
-        return jsonify({'info': info, 'img_data': img_data})
+    return jsonify({'info': info, 'img_data': encode(imgs)})
 
 @app.route('/api/locations', methods=['GET'])
 def locations():
@@ -102,5 +104,32 @@ def worlds():
 
     return jsonify(output)
 
+@app.route('/api/search/<int:image_id>', methods=['GET'])
+def get_image(image_id):
+    query = f"SELECT image_data FROM photos WHERE id = %s;"
+
+    cursor.execute(query, (image_id,))
+    image_data = cursor.fetchone()
+
+    image_bytes = BytesIO(image_data[0])
+
+    return send_file(image_bytes, mimetype='image/jpeg')
+
+@app.route('/api/journey', methods=['GET'])
+def journey():
+    cursor.execute("""
+        SELECT image_data FROM photos 
+        ORDER BY date ASC;
+    """)
+    imgs = cursor.fetchall()
+
+    cursor.execute("""
+        SELECT date FROM photos
+        ORDER BY date ASC;
+    """)
+    dates = cursor.fetchall()
+
+    return jsonify({'dates': dates, 'img_data': encode(imgs)})
+
 if __name__ == '__main__':
-    app.run(debug=False, host='0.0.0.0', port=5000)
+    app.run(debug=True, host='0.0.0.0', port=5000)

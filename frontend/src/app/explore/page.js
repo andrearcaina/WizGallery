@@ -54,10 +54,11 @@ export default function App() {
     console.log("API Data:", apiData);
 
     return (
-        <>
+        <main>
             <div className="bg-gray-200 p-8">
-                <h1 className="text-2xl font-bold mb-4">Wiz Gallery</h1>
+                <h1 className="text-2xl font-bold mb-4">Explore!</h1>
                 <Form onSubmit={handleFormSubmit} allWorlds={Worlds} />
+                
                 {apiData.info && apiData.img_data && apiData.info.map((item, index) => (
                     <div key={index}>
                         <p>Account: {item[1]}</p>
@@ -72,10 +73,11 @@ export default function App() {
                         />
                     </div>
                 ))}
+                
                 {!apiData.info && <p>Testing API: {JSON.stringify(apiData, null, 2)}</p>}
                 {!apiData.info && <p>No data available: submit a form</p>}
                 {!apiData.img_data && <p>No image data available: submit a form</p>}
             </div>
-        </>
+        </main>
     );
 };

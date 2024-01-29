@@ -26,7 +26,7 @@ export default function Nav() {
                 <div className="flex items-center">
                     <Link href="/">
                         <p className="flex items-center space-x-2 text-black">
-                            <Image src="/logo2.jpg" alt="Logo" width={80} height={80} className="rounded-md" />
+                            <Image src="/images/icon.ico" alt="Logo" width={80} height={80} className="rounded-md" />
                             <span className="font-semibold text-3xl">WizGallery</span>
                         </p>
                     </Link>
