@@ -26,8 +26,8 @@ export default function Nav() {
                 <div className="flex items-center">
                     <Link href="/">
                         <p className="flex items-center space-x-2 text-black">
-                            <Image src="/images/icon.ico" alt="Logo" width={80} height={80} className="rounded-md" />
-                            <span className="font-semibold text-3xl">WizGallery</span>
+                            <Image src="/images/icon.ico" alt="Logo" width={80} height={80} className="rounded-md logo-image" />
+                            <span className="font-semibold text-2xl lg:text-3xl">WizGallery</span>
                         </p>
                     </Link>
                 </div>
@@ -36,7 +36,7 @@ export default function Nav() {
                     <div className="flex flex-col lg:flex-row lg:space-x-4">
                         {NavItems.map((route, index) => (
                             <Link href={route.href} key={index}>
-                                <p className="text-black text-xl hover:text-green-500">{route.text}</p>
+                                <p className="text-black text-xl hover:text-green-500 transition-colors duration-200">{route.text}</p>
                             </Link>
                         ))}
                     </div>

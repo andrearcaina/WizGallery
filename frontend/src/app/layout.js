@@ -1,4 +1,4 @@
-import { Navbar, Footer } from '@/components';
+import { Navbar, Footer, ScrollUp } from '@/components';
 import './globals.css';
 
 export const metadata = {
@@ -13,6 +13,7 @@ export default function RootLayout({ children }) {
       <body className="font-mono">
         <Navbar />
         <main className="space-y-20">{children}</main>
+        <ScrollUp />
         <Footer />
       </body>
     </html>

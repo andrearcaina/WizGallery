@@ -19,7 +19,7 @@ export const NavMobile = ({ links }) => {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.2 }}
-                        className="fixed left-0 right-0 z-50 p-5 bg-white top-[6.5rem] shadow-lg"
+                        className="fixed left-0 right-0 z-50 p-5 bg-white top-[5rem] shadow-lg"
                     >
                         <ul className="grid gap-5">
                             {links.map((link, idx) => (
