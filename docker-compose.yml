@@ -4,10 +4,16 @@ services:
       context: ./backend
     ports:
       - "5000:5000"
-    env_file:
-      - ./backend/.env
     environment:
       - DOCKER_ENV=True
+      - MYSQL_ROOT_PASSWORD=${{ secrets.MYSQL_ROOT_PASSWORD }}
+      - MYSQL_DATABASE=${{ secrets.MYSQL_DATABASE }}
+      - MYSQL_USER=${{ secrets.MYSQL_USER }}
+      - MYSQL_PASSWORD=${{ secrets.MYSQL_PASSWORD }}
+      - DB_HOST=${{ secrets.DB_HOST }}
+      - DB_USER=${{ secrets.DB_USER }}
+      - DB_PASS=${{ secrets.DB_PASS }}
+      - DB_NAME=${{ secrets.DB_NAME }}
     depends_on:
       - database
     volumes:
@@ -28,5 +34,8 @@ services:
     image: mysql:8.3
     ports:
       - "3307:3306"
-    env_file:
-      - ./backend/.env
+    environment:
+      - MYSQL_ROOT_PASSWORD=${{ secrets.MYSQL_ROOT_PASSWORD }}
+      - MYSQL_DATABASE=${{ secrets.MYSQL_DATABASE }}
+      - MYSQL_USER=${{ secrets.MYSQL_USER }}
+      - MYSQL_PASSWORD=${{ secrets.MYSQL_PASSWORD }}
