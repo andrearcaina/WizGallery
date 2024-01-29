@@ -5,15 +5,15 @@ services:
     ports:
       - "5000:5000"
     environment:
-      - DOCKER_ENV=True
-      - MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      - MYSQL_DATABASE: ${MYSQL_DATABASE}
-      - MYSQL_USER: ${MYSQL_USER}
-      - MYSQL_PASSWORD: ${MYSQL_PASSWORD}
-      - DB_HOST: ${DB_HOST}
-      - DB_USER: ${DB_USER}
-      - DB_PASS: ${DB_PASS}
-      - DB_NAME: ${DB_NAME}
+      DOCKER_ENV: True
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      DB_HOST: ${DB_HOST}
+      DB_USER: ${DB_USER}
+      DB_PASS: ${DB_PASS}
+      DB_NAME: ${DB_NAME}
     depends_on:
       - database
     volumes:
@@ -35,7 +35,7 @@ services:
     ports:
       - "3307:3306"
     environment:
-      - MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      - MYSQL_DATABASE: ${MYSQL_DATABASE}
-      - MYSQL_USER: ${MYSQL_USER}
-      - MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
