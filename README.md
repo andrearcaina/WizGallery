@@ -57,6 +57,8 @@ Some updates/ideas to implement into WizGallery:
    * The images processed need to be actual photos taken in Wizard101
 3. `Photo showcase for users`: Allows users to check out their own photos that they uploaded
    * This is the main reason for the second point
+4. `Cloud or Remote Database`: Benefits > Disadvantages
+   * This can easily allow `CI/CD` implementation
 
 <hr>
 
