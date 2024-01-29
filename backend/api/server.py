@@ -59,13 +59,13 @@ def index():
 def search():
     form = request.args.get('location')
 
-    info_query = f"SELECT id, account, world, file_name, date FROM photos WHERE location = '{form}';"
-    cursor.execute(info_query)
+    info_query = f"SELECT id, account, world, file_name, date FROM photos WHERE location = %s;"
+    cursor.execute(info_query, (form,))
 
     info = cursor.fetchall()
 
-    img_query = f"SELECT image_data FROM photos WHERE location = '{form}';"
-    cursor.execute(img_query)
+    img_query = f"SELECT image_data FROM photos WHERE location = %s;"
+    cursor.execute(img_query, (form,))
 
     imgs = cursor.fetchall()
 
@@ -86,8 +86,8 @@ def search():
 def locations():
     world = request.args.get('world')
     
-    query = f"SELECT DISTINCT location FROM photos WHERE world = '{world}';"
-    cursor.execute(query)
+    query = f"SELECT DISTINCT location FROM photos WHERE world = %s;"
+    cursor.execute(query, (world,))
 
     output = cursor.fetchall()
 
@@ -103,4 +103,4 @@ def worlds():
     return jsonify(output)
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    app.run(debug=False, host='0.0.0.0', port=5000)
