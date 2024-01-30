@@ -11,9 +11,9 @@ services:
     depends_on:
       - database
     volumes:
-      - ./backend/data:/app/data
-      - C:/Users/dtand/Downloads/Wizard101/Photos:/app/data/photos
-    command: bash -c '/app/data/init_script.sh'
+      - ./backend/scripts:/app/scripts
+      - C:/Users/dtand/Downloads/Wizard101/Photos:/app/scripts/photos
+    command: bash -c '/app/scripts/init_script.sh'
 
   frontend:
     build:

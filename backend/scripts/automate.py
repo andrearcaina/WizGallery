@@ -77,7 +77,7 @@ def read_image(file_path):
         return file.read()
 
 def traverse():
-    base_dir = '/app/data/photos'
+    base_dir = '/app/scripts/photos'
 
     for account in os.listdir(base_dir):
         account_path = os.path.join(base_dir, account)
