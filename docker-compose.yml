@@ -13,7 +13,8 @@ services:
     volumes:
       - ./backend/scripts:/app/scripts
       - C:/Users/dtand/Downloads/Wizard101/Photos:/app/scripts/photos
-    command: bash -c '/app/scripts/init_script.sh'
+    command: |
+      bash -c 'python /app/scripts/automate.py ; python /app/api/server.py ; echo "backend is running" '
 
   frontend:
     build:
