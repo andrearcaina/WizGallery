@@ -31,7 +31,7 @@ Here is a breakdown:
 - Flask provides an easy way to map HTTP methods with specific functions and decorators
   - An example is: `@app.route('api/data', methods=['GET'])`. This is a decorator to signify that at the endpoint `api/data`, there is data to retrieve from the database using the `GET` method
   - The returned output to the client of the data is a JSON object. Flask simplifies this by: `return jsonify(some_data)`
-  - For more information check out [api/server.py](https://github.com/andrearcaina/WizGallery/blob/main/backend/api/server.py)
+  - For more information check out [api/server.py](https://github.com/andrearcaina/WizGallery/blob/dev/backend/api/server.py)
 
 [![GIT](https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white)](https://git-scm.com/)
 [![DOCKER](https://img.shields.io/badge/DOCKER-0db7ed?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/) \
