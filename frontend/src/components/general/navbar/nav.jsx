@@ -8,7 +8,7 @@ export default function Nav() {
 
     useEffect(() => {
         fetchNavItems();
-    });
+    }, []);
 
     const fetchNavItems = async () => {
         try {
