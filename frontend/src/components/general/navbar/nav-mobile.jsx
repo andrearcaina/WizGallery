@@ -2,6 +2,7 @@ import { useState, useRef } from 'react';
 import { useClickAway } from 'react-use';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Squash as Hamburger } from 'hamburger-react';
+import Link from 'next/link';
 
 export const NavMobile = ({ links }) => {
     const [isOpen, setOpen] = useState(false);
@@ -35,13 +36,13 @@ export const NavMobile = ({ links }) => {
                                     key={idx}
                                     className="w-full rounded-xl bg-gray-300 text-black"
                                 >
-                                    <a
+                                    <Link
                                         onClick={() => setOpen((prev) => !prev)}
                                         className="flex items-center justify-between w-full p-5 rounded-xl bg-gray-300 text-black"
                                         href={link.href}
                                     >
                                         <span className="flex gap-1 text-lg">{link.text}</span>
-                                    </a>
+                                    </Link>
                                 </motion.li>
                             ))}
                         </ul>
