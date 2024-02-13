@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { Form, Search } from '@/components';
 import '../globals.css';
 
-export default function App() {
+export default function Explore() {
     const [apiData, setApiData] = useState([]);
     const [Worlds, setWorlds] = useState([]);
 
