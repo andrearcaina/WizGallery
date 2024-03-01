@@ -18,9 +18,9 @@ The frontend is developed using `JavaScript` and the Next.js framework, with Tai
 
 [![PYTHON](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)](https://www.python.org/)
 [![FLASK](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)](https://flask.palletsprojects.com/en/3.0.x/)
-[![MYSQL](https://img.shields.io/badge/MYSQL-14354C?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/) \
+[![POSTGRESQL](https://img.shields.io/badge/POSTGRESQL-14354C?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/) \
 The backend framework chosen for this project is Flask, a `Python`-based framework. In Flask, I create API endpoints to communicate with the frontend (the client).
-These endpoints are designed for retrieving data from a MySQL database structure, which was made using the MySQL Community Edition Server (from their website).
+These endpoints are designed for retrieving data from a PostgreSQL database structure, which was made using the MySQL Community Edition Server but then migrated to Supabase.
 This entire process resembles a RESTful API, employing HTTP methods such as GET for querying the database, and then returning JSON objects to the client.
 
 Here is a breakdown:
