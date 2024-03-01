@@ -3,7 +3,7 @@
 </h1>
 
 <h2 align="center">WizGallery is...</h2>
-<p align="center"><strong>a Flask application powered by Next.js, designed to showcase my collection of Wizard101 game photos sourced from a local MySQL database. Utilized Docker to simplify testing, processing, and deploying the application locally.</strong></h4>
+<p align="center"><strong>a Flask application powered by Next.js, designed to showcase my collection of Wizard101 game photos sourced on Supabase. Utilized Docker to simplify testing, processing, and deploying the application locally.</strong></h4>
 
 <pre align="center"> For any fellow Wizard101 Fans or OG's, try guessing the location of the logo above :P </pre>
 
@@ -62,8 +62,6 @@ Some updates/ideas to implement into WizGallery:
    - The images processed need to be actual photos taken in Wizard101
 3. `Photo showcase for users`: Allows users to check out their own photos that they uploaded
    - This is the main reason for the second point
-4. `Cloud or Remote Database`: Benefits outweigh the disadvantages (even time!!)
-   - This can easily allow `CI/CD` implementation
 
 <hr>
 
@@ -72,4 +70,4 @@ Some updates/ideas to implement into WizGallery:
 - `Docker`: How to use, what it does, and containerization
 - `API's`: How to use, what it does, and different structures
 - `Fetch`: How to use, what it does, and what it can do
-- `MySQL`: How to use and what it does, alongside creating queries
+- `MySQL + PostgreSQL`: How to use and what it does, alongside creating queries
