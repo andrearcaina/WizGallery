@@ -17,10 +17,8 @@ export default function Explore() {
         try {
             let url = "";
             if (location) {
-                console.log(`Fetching data for ${location}...`);
                 url = `http://localhost:5000/api/search?location=${location}`;
             } else {
-                console.log("Fetching all data...");
                 url = 'http://localhost:5000/api/data';
             }
 
@@ -47,11 +45,8 @@ export default function Explore() {
     };
 
     const handleFormSubmit = ({ world, location }) => {
-        console.log(`World: ${world}, Location: ${location}`);
         fetchData(location);
     };
-
-    console.log("API Data:", apiData);
 
     return (
         <main>

@@ -37,17 +37,23 @@ export default function WhoAmI() {
                         <span className="inline-block hover:animate-bounce">a</span>
                     </p>
 
-                    <p className="text-lg mb-4">big fan of wizard101 :D</p>
-                    <p className="text-lg mb-4">
+                    <div className="text-lg mb-4">big fan of wizard101 :D</div>
+                    
+                    <div className="text-lg mb-4">
                         currently studying cs at <Link className="underline hover:text-green-500 transition-all duration-300" href="https://www.torontomu.ca/">tmu</Link>
-                    </p>
-                    <p className="text-lg mb-4 cursor-pointer">
+                    </div>
+                    
+                    <div className="text-lg mb-4 cursor-pointer">
                         {text.split().map((char, index) => (
                             <span key={index} className="inline-block hover:text-green-500 hover:animate-pulse transition-all duration-300">
                                 {char !== ' ' ? char : '\u00A0'}
                             </span>
                         ))}
-                    </p>
+                    </div>
+
+                    <div className="text-lg mb-4">
+                        check out my <Link className="underline hover:text-green-500 transition-all duration-300" href="https://andrearcaina.vercel.app/">portfolio</Link>
+                    </div>
                 </div>
             </div>
         </main>

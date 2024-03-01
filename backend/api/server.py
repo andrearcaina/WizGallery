@@ -60,23 +60,7 @@ def search():
 
     imgs = cursor.fetchall()
 
-    # testing if the images are being retrieved and if they're different
-    for i in imgs:
-        for j in i:
-            print(len(j))
-
     return jsonify({'info': info, 'img_data': encode(imgs)})
-
-@app.route('/api/search/<int:image_id>', methods=['GET'])
-def get_image(image_id):
-    query = f"SELECT image_data FROM wiz_photos WHERE id = %s;"
-
-    cursor.execute(query, (image_id,))
-    image_data = cursor.fetchone()
-
-    image_bytes = BytesIO(image_data[0])
-
-    return send_file(image_bytes, mimetype='image/jpeg')
 
 @app.route('/api/locations', methods=['GET'])
 def locations():
@@ -100,16 +84,22 @@ def worlds():
 
 @app.route('/api/journey', methods=['GET'])
 def journey():
+    page = request.args.get('page', 1, type=int)
+
+    offset = (page - 1) * 10
+
     cursor.execute("""
         SELECT image_data FROM wiz_photos 
-        ORDER BY date ASC;
-    """)
+        ORDER BY date ASC
+        LIMIT 10 OFFSET %s;
+    """, (offset,))
     imgs = cursor.fetchall()
 
     cursor.execute("""
         SELECT date FROM wiz_photos
-        ORDER BY date ASC;
-    """)
+        ORDER BY date ASC
+        LIMIT 10 OFFSET %s;
+    """, (offset,))
     dates = cursor.fetchall()
 
     return jsonify({'dates': dates, 'img_data': encode(imgs)})
