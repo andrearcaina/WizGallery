@@ -6,15 +6,8 @@ services:
       - "5000:5000"
     env_file:
       - ./backend/.env
-    environment:
-      - DOCKER_ENV=True
-    depends_on:
-      - database
-    volumes:
-      - ./backend/scripts:/app/scripts
-      - C:/Users/dtand/Downloads/Wizard101/Photos:/app/scripts/photos
     command: |
-      bash -c 'python /app/scripts/automate.py ; python /app/api/server.py ; echo "backend is running" '
+      bash -c 'python /app/api/server.py ; echo "backend is running" '
 
   frontend:
     build:
@@ -24,10 +17,3 @@ services:
     depends_on:
       - backend
     command: bash -c 'npm run start'
-
-  database:
-    image: mysql:8.3
-    ports:
-      - "3307:3306"
-    env_file:
-      - ./backend/.env
