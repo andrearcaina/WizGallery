@@ -2,7 +2,6 @@ from flask import Flask, jsonify, request, send_file
 from flask_cors import CORS
 import psycopg2
 from dotenv import load_dotenv
-from io import BytesIO
 import base64, os, time
 
 load_dotenv()
@@ -16,11 +15,11 @@ def establish_connection():
     while True:
         try:
             connection = psycopg2.connect(
-                user='postgres.mddimapzicgfdtnkcpqz',
+                user=str(os.environ.get('SUPABASE_USER')),
                 password=str(os.environ.get('SUPABASE_PASS')),
-                host='aws-0-ca-central-1.pooler.supabase.com',
-                port='5432',
-                dbname='postgres'
+                host=str(os.environ.get('SUPABASE_HOST')),
+                port=str(os.environ.get('SUPABASE_PORT')) or 5432,
+                dbname=str(os.environ.get('SUPABASE_DB'))
             )
             return connection
         
@@ -50,17 +49,17 @@ def index():
 def search():
     form = request.args.get('location')
 
-    info_query = f"SELECT id, account, world, file_name, date FROM wiz_photos WHERE location = %s;"
+    info_query = f"SELECT date FROM wiz_photos WHERE location = %s;"
     cursor.execute(info_query, (form,))
 
-    info = cursor.fetchall()
+    date = cursor.fetchall()
 
     img_query = f"SELECT image_data FROM wiz_photos WHERE location = %s;"
     cursor.execute(img_query, (form,))
 
     imgs = cursor.fetchall()
 
-    return jsonify({'info': info, 'img_data': encode(imgs)})
+    return jsonify({'dates': date, 'img_data': encode(imgs)})
 
 @app.route('/api/locations', methods=['GET'])
 def locations():

@@ -12,7 +12,7 @@ export default function ScrollUpButton() {
         <div>
             <ScrollToTop
                 smooth
-                top={500}
+                top={300}
                 style={styles}
             />
         </div>

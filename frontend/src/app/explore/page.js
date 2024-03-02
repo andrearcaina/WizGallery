@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
-import { Form, Search } from '@/components';
+import { Form, DisplayImages, Search } from '@/components';
 import '../globals.css';
 
 export default function Explore() {
@@ -44,34 +44,22 @@ export default function Explore() {
         }
     };
 
-    const handleFormSubmit = ({ world, location }) => {
+    const handleFormSubmit = ({ location }) => {
         fetchData(location);
     };
 
     return (
-        <main>
-            <div className="bg-gray-200 p-8">
-                <h1 className="text-2xl font-bold mb-4">Explore!</h1>
-                <Form onSubmit={handleFormSubmit} allWorlds={Worlds} />
+        <main className="min-h-[80vh] bg-gray-200">
+            <div className="p-8">
+                <h1 className="text-2xl font-bold mb-4 text-center">Explore!</h1>
                 
-                {apiData.info && apiData.img_data && apiData.info.map((item, index) => (
-                    <div key={index}>
-                        <p>Account: {item[1]}</p>
-                        <p>World: {item[2]}</p>
-                        <p>File Name: {item[3]}</p>
-                        <p>Date: {item[4]}</p>
-                        <Image
-                            src={`data:image/jpeg;base64,${apiData.img_data[index]}`}
-                            width={500}
-                            height={500}
-                            alt={`Image ${index + 1}`}
-                        />
-                    </div>
-                ))}
-                
-                {!apiData.info && <p>Testing API: {JSON.stringify(apiData, null, 2)}</p>}
-                {!apiData.info && <p>No data available: submit a form</p>}
-                {!apiData.img_data && <p>No image data available: submit a form</p>}
+                <div className="flex justify-center items-center h-full">
+                    <Form onSubmit={handleFormSubmit} allWorlds={Worlds} />
+                </div>
+                    
+                <div className="flex flex-wrap justify-center">
+                    <DisplayImages Data={apiData} />
+                </div>
             </div>
         </main>
     );

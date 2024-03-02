@@ -10,7 +10,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="font-mono">
+      <body className="font-sans">
         <Navbar />
         <main className="space-y-20">{children}</main>
         <ScrollUp />
