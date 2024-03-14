@@ -71,3 +71,4 @@ Some updates/ideas to implement into WizGallery:
 - `API's`: How to use, what it does, and different structures
 - `Fetch`: How to use, what it does, and what it can do
 - `MySQL + PostgreSQL`: How to use and what it does, alongside creating queries
+- `Supabase`: How to use and what it does
