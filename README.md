@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="frontend/public/images/logo.jpg" alt="logo" width="100%">
+  <img src="client/public/images/logo.jpg" alt="logo" width="100%">
 </h1>
 
 <h2 align="center">WizGallery is...</h2>
