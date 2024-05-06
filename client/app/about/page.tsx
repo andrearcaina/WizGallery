@@ -23,7 +23,7 @@ export default function WhoAmI() {
                         <span className="inline-block hover:animate-bounce transition-all duration-300">h</span>
                         <span className="inline-block hover:animate-bounce">i</span>
                         <span className="inline-block hover:animate-bounce">!</span> <span className="inline-block hover:animate-bounce">i</span>
-                        <span className="inline-block hover:animate-bounce">'</span>
+                        <span className="inline-block hover:animate-bounce">&apos;</span>
                         <span className="inline-block hover:animate-bounce">m</span> <span className="inline-block hover:animate-bounce">a</span>
                         <span className="inline-block hover:animate-bounce">n</span>
                         <span className="inline-block hover:animate-bounce">d</span>
@@ -44,7 +44,7 @@ export default function WhoAmI() {
                     </div>
                     
                     <div className="text-lg mb-4 cursor-pointer">
-                        {text.split().map((char, index) => (
+                        {text.split('').map((char, index) => (
                             <span key={index} className="inline-block hover:text-green-500 hover:animate-pulse transition-all duration-300">
                                 {char !== ' ' ? char : '\u00A0'}
                             </span>

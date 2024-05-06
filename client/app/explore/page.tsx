@@ -9,11 +9,10 @@ export default function Explore() {
     const [Worlds, setWorlds] = useState([]);
 
     useEffect(() => {
-        fetchData();
         fetchWorlds();
     }, []);
 
-    const fetchData = async (location = null) => {
+    const fetchData = async (location: string) => {
         try {
             let url = "";
             if (location) {
@@ -44,7 +43,11 @@ export default function Explore() {
         }
     };
 
-    const handleFormSubmit = ({ location }) => {
+    const handleFormSubmit = (location: string | null | undefined) => {
+        if (!location) {
+            return;
+        }
+        
         fetchData(location);
     };
 

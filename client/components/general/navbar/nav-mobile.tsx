@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { Squash as Hamburger } from 'hamburger-react';
 import Link from 'next/link';
 
-export const NavMobile = ({ links }) => {
+export const NavMobile = ({ links }: { links: Array<{ href: string, text: string }> }) => {
     const [isOpen, setOpen] = useState(false);
     const ref = useRef(null);
 

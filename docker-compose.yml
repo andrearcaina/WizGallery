@@ -1,19 +1,19 @@
 services:
-  backend:
+  server:
     build:
-      context: ./backend
+      context: ./server
     ports:
       - "5000:5000"
     env_file:
-      - ./backend/.env
+      - ./server/.env
     command: |
       bash -c 'python /app/api/server.py ; echo "backend is running" '
 
-  frontend:
+  client:
     build:
       context: ./frontend
     ports:
       - "3000:3000"
     depends_on:
-      - backend
+      - server
     command: bash -c 'npm run start'

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export default function Form({ onSubmit, allWorlds }) {
+export default function Form({ onSubmit, allWorlds }: { onSubmit: (location: string | null | undefined) => void, allWorlds: string[] }) {
     const [world, setWorld] = useState('');
     const [allLocations, setLocations] = useState([]);
     const [selectedLocation, selectLocation] = useState('');
@@ -13,7 +13,7 @@ export default function Form({ onSubmit, allWorlds }) {
         }
     }, [world]);
 
-    const fetchLocations = async (selectedWorld) => {
+    const fetchLocations = async (selectedWorld: string) => {
         try {
             const res = await fetch(`http://localhost:5000/api/locations?world=${selectedWorld}`, {
                 method: 'GET'
@@ -25,13 +25,12 @@ export default function Form({ onSubmit, allWorlds }) {
         }
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        onSubmit({ world, location: selectedLocation });
+    const handleSubmit = () => {
+        onSubmit(selectedLocation);
     };
 
     return (
-        <form onSubmit={handleSubmit} className="mt-4">
+        <form action={handleSubmit} className="mt-4">
             <div className="mb-4">
                 <label className="block text-sm font-medium text-gray-700">World:</label>
                 <select
@@ -40,7 +39,7 @@ export default function Form({ onSubmit, allWorlds }) {
                     className="mt-1 p-2 border rounded-md w-full"
                 >
                     <option value="" disabled>Select a world</option>
-                    {allWorlds.map((world) => (
+                    {allWorlds.map((world: string) => (
                         <option key={world} value={world}>{world}</option>
                     ))}
                 </select>

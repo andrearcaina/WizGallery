@@ -34,7 +34,7 @@ export default function Nav() {
 
                 <div className="hidden lg:flex lg:items-center lg:w-auto">
                     <div className="flex flex-col lg:flex-row lg:space-x-4">
-                        {NavItems.map((route, index) => (
+                        {NavItems.map((route: { href: string, text: string }, index: number) => (
                             <Link href={route.href} key={index}>
                                 <p className="text-black text-xl hover:text-green-500 transition-colors duration-200">{route.text}</p>
                             </Link>

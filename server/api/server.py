@@ -43,6 +43,7 @@ def encode(imgs):
 @app.route('/api/data', methods=['GET'])
 def index():
     example_data = {'data': 'Hello World!'}
+    
     return jsonify(example_data)
 
 @app.route('/api/search', methods=['GET'])
@@ -92,6 +93,7 @@ def journey():
         ORDER BY date ASC
         LIMIT 10 OFFSET %s;
     """, (offset,))
+    
     imgs = cursor.fetchall()
 
     cursor.execute("""

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-export default function Parallax({ image }) {
+export default function Parallax({ image }: { image: string }) {
     return (
         <div className="h-[90vh] relative overflow-hidden">
             <div
